@@ -6,7 +6,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Movement : MonoBehaviour
 {
-    public float m_speed = 2.5f;
+    public float m_speed = 10f;
 
     private string m_horizontalAxis = "Horizontal";
     private string m_verticalAxis = "Vertical";
