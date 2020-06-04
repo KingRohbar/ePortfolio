@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
 
-public class Movement : MonoBehaviour
+public class CubeMovement : MonoBehaviour
 {
     public float m_speed = 10f;
 
@@ -13,7 +11,6 @@ public class Movement : MonoBehaviour
     private Rigidbody m_Rigidbody;
     private float m_horizontalInputValue;
     private float m_verticalInputValue;
-
 
     // Start is called before the first frame update
     void Start()

@@ -5,8 +5,8 @@ using UnityEngine;
 public class FloorManager : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
-    public bool isGoal = false;
-    public bool isWin = false;
+    private bool isGoal = false;
+    private bool isWin = false;
 
     // Start is called before the first frame update
     void Start()
