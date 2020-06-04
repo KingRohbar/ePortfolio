@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 498}
   m_MaxSize: {x: 10004, y: 14048}
   vertical: 1
-  controlID: 104
+  controlID: 61
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 91
+  controlID: 83
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 55
+  controlID: 132
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -499,8 +499,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 800b0000
-      m_LastClickedID: 0
+      m_SelectedIDs: 740f0000
+      m_LastClickedID: 3956
       m_ExpandedIDs: defbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -598,19 +598,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Shell
+    - Assets/Scripts/Managers
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Shell
+  - Assets/Scripts/Managers
   m_LastFoldersGridSize: 16
   m_LastProjectPath: G:\Dev\Projects\ePortfolio\ePortfolio\TanksTutorial
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 400e0000
-    m_LastClickedID: 3648
+    m_SelectedIDs: a00a0000
+    m_LastClickedID: 2720
     m_ExpandedIDs: 00000000920a0000b00c0000ce0e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -670,18 +670,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 60aaffff0e2b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: ShellExplosion
+      m_OriginalName: ShellExplosion
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 2624
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_CreateAssetUtility:
