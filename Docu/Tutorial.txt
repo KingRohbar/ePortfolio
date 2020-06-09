@@ -1,0 +1,92 @@
+DEMO:
+
+To follow this Tutorial you need to clone this repository and open the "Demos" Project in Unity.
+Then you have to open the DemoScene found under Assets -> Scenes. 
+
+1st Steps:
+- In the Hierarchy select Create -> 3D Object -> Cube to create a new Cube-GameObject
+- Select the Cube ant set the Scale inside the Transform Component to X=2, Y=2, Z=2
+- In the Inspector of the Cube click on "Add Component" and search for "Rigidbody" and select it
+- In the Rigidbody Component set the Checkbox at "Is Kinematic"
+- Make sure in the BoxCollider Component taht the "Is Trigger" Checkbox is unchecked
+- In the Projects Folder got to Assets -> Scripts -> MainDemo and drag and drop the "FloorManager" on the Cube
+- select the Cube and in the upper right side of the Inspector click on Layer -> Add Layer and create a new Layer called Floor
+- Assign the Floor Layer
+- Rename the Cube to "FloorCube"
+- Save the Scene (Strg + S)
+- Drag and Drop the Cube onto Assets -> Prefab
+- if the little icon left of the name is now blue remove the Cube from the Hierarchy
+
+2nd Steps:
+- In the Hierarchy select Create -> Create Empty to create an Empty GameObject
+- Assign GameManger_Demo Script as you did with the FloorManager Script
+- In the Inspector you see, that in the Script Component some Parameters are missing. For the moment you just have to drag and drop the Prefab of the FloorCube onto the Floor Prefab Parameter field
+- Click Play to see if a Floor is created
+- You can change the size of the floor by variing the FloorSize Parameter
+
+3rd Steps:
+- Create a Sphere GameObject
+- In the Materials Folder drag and drop "Blue" onto the Sphere to assign this material. The Sphere should now be Blue
+- Add a Rigidbody Component to the Sphere
+- In the Rigidbody freeze Rotation X and Z
+- Add the SphereMovement_Demo Script to the Sphere
+- Double Click onto the ScriptName to open it in the IDE
+- Type the Code below to those Functions  
+	- private void Move()
+    {
+        Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
+        m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
+    }
+	- private void Turn()
+    {
+        float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
+        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
+        m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotation);
+    }
+- go back to Unity and click Play to see if you now can move with W,A,S,D 
+- Drag and Drop the Camera of the Hierarchy onto the Sphere to make it a Child Object
+- Set the Camera Position and Rotation in the Transform Component to
+	- Position: X=0, Y=2.5, Z=-5
+	- Rotation: X=20, Y=0, Z=0 
+- Rename the Sphere to Player
+- Set the Position to Y=2
+	
+4th Steps:
+- entcomment the "SetTrap" Function and type the Code below into it, also entcomment the Function Call of SetTrap in CreateLevel() 
+	- private void SetTrap(GameObject instance)
+    {
+        if (Random.Range(0f, 1f) <= m_TrapPercentage)
+        {
+            BoxCollider collider = instance.GetComponent<BoxCollider>();
+            collider.isTrigger = true;
+        }
+    }
+- at the top of the Script remove [HideInInspector], now this Variable is also visible as a Parameter in the Unity-Editor
+- this Parameter is the propability that a tile of the floor is a Trap
+- Play the game to see if some FloorCubes fall down if you move over them
+
+5th Steps:
+- entcomment the Jump function and functionCall in the SphereMovement_Demo Script
+- Play the Game to see that you can now jump by pressing sapce
+
+6th Steps:
+- Set Position of Player to Y=0
+- Make the Player a Prefab and then delete it from the Hierarchy
+- Drag and Drop the Player Prefab onto the Parameter in the GameManger_Demo Component
+- entcomment SpawnPlayer and SetGoal Function and the Function Calls in the Start-Function
+- entcomment public GameObject m_GoalLightPrefab; in the variable declaration
+- drag and drop the GoalLight out of the Prefab Folder ontho the Parameter in the GameManger_Demo Script in Unity
+Play the Game to see that the Player and the Goal is automatically spawned
+
+7th Steps:
+- Create -> UI -> Text in the Hierarchy
+- You now can see that also a Canvas has been created, which is nessesary for UI GameObject
+- in the Inspector of the Text-GameObject select the icon in the upper left of the Rect Transform Component, then alt click on the lower right to change the layout that the text reaches over the whole canvas 
+- center Text in both Alingment options
+- change color to white, click on the Color Parameter and set all values to 255
+- remove the text in the Text Parameter
+- entcomment Loose, Win and Disable Control, the Function Calls in Update() and the public Text m_Text; Variable Declaration in the GameManger_Demo Script
+- where these comments (//TODO:set an text) remove it and write m_Text.text = ""; and fill the commatas with a win and a loose message
+
+FINISHED you now can Play this Game or improve it and add new Features
+
